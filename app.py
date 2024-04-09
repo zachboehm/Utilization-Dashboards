@@ -3,7 +3,6 @@ import plotly_express as px
 import streamlit as st
 import matplotlib as plt
 import datetime
-#python -m streamlit run app.py
 
 st.set_page_config(page_title='Hours Dashboard',
                    page_icon=':bar_chart:',
