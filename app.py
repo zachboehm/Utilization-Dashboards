@@ -100,12 +100,11 @@ def calculate_activity(df, last_bal_sheet_acc):
 
 st.text_input("Last balance sheet Account:")
 
-
 tb_file = st.file_uploader("select an xlsx trial balance")
 
-tb = format_qb_tb(tb_file)
-
-tb1 = calculate_activity(tb, 'Retained Earnings')
+if tb_file:
+    tb = format_qb_tb(tb_file)
+    tb1 = calculate_activity(tb, 'Retained Earnings')
 
 
 button = st.button("Download Excel File")
