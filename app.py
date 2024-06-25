@@ -110,7 +110,7 @@ if tb_file:
     tb1 = calculate_activity(tb, 'Retained Earnings')
 
 
-button = st.button("Download Excel File")
+button = st.button("Generate Excel File")
 if tb_file:
     if button:
         output = io.BytesIO()
