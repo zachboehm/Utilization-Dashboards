@@ -116,7 +116,7 @@ if tb_file:
         output = io.BytesIO()
         writer = pd.ExcelWriter(output, engine='xlsxwriter')
         tb1.to_excel(writer, index=False, sheet_name='Sheet1')
-        writer.save()
+        writer.close()
         output.seek(0)
         st.download_button(
             label="Download",
