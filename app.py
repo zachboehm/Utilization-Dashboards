@@ -113,7 +113,7 @@ button = st.button("Download Excel File")
 if tb_file:
     if button:
         output = io.BytesIO()
-        writer = pd.ExcelWriter(output)
+        writer = pd.ExcelWriter(output, engine='xlsxwriter')
         tb1.to_excel(writer, index=False, sheet_name='Sheet1')
         writer.save()
         st.download_button(
