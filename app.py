@@ -98,7 +98,7 @@ def calculate_activity(df, last_bal_sheet_acc):
     
     return result_df
 
-st.write("Look at the Trial Balance report from Quickbooks, and identify the name of the last balance sheet account in the list of accounts and type it in the box below. It must match exactly or this will not work.")
+st.write("Run a QuickBooks online Trial Balance Report and set the columns by month for the time period interested in. Look at the Trial Balance report from Quickbooks, and identify the name of the last balance sheet account in the list of accounts and type it in the box below. It must match exactly or this will not work.")
 
 st.text_input("Last balance sheet Account:")
 
