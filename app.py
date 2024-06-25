@@ -114,9 +114,7 @@ if tb_file:
     if button:
         output = io.BytesIO()
         writer = pd.ExcelWriter(output)
-        tb1.to_excel(writer, index=False, sheet_name='Sheet1')
-        writer.save()
-        output.seek(0)
+        tb1.to_excel(index=False, sheet_name='Sheet1')
         st.download_button(
             label="Download",
             data=output,
