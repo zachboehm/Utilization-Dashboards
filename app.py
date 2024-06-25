@@ -112,13 +112,13 @@ if tb_file:
 button = st.button("Download Excel File")
 if tb_file:
     if button:
-        output = io.BytesIO()
-        writer = pd.ExcelWriter(output, engine='xlsxwriter')
-        tb1.to_excel(writer, index=False, sheet_name='Sheet1')
-        writer.save()
-        st.download_button(
-            label="Download",
-            data=output,
-            file_name='output.xlsx',
-            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        )
+        buffer = io.BytesIO()
+        with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
+            tb1.to_excel(writer, sheet_name='Sheet1', index=False)
+            writer.save()
+            st.download_button(
+                label="Download",
+                data=output,
+                file_name='output.xlsx',
+                mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            )
