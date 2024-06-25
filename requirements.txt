@@ -4,3 +4,4 @@ streamlit
 plotly
 plotly_express
 matplotlib
+xlsxwriter
