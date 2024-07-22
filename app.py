@@ -101,13 +101,13 @@ def calculate_activity(df, last_bal_sheet_acc):
 
 st.write("Run a QuickBooks online Trial Balance Report and set the columns by month for the time period interested in. Look at the Trial Balance report from Quickbooks, and identify the name of the last balance sheet account in the list of accounts and type it in the box below. It must match exactly or this will not work.")
 
-st.text_input("Last balance sheet Account:")
+last = st.text_input("Last balance sheet Account:")
 
 tb_file = st.file_uploader("select an xlsx trial balance")
 
 if tb_file:
     tb = format_qb_tb(tb_file)
-    tb1 = calculate_activity(tb, 'Retained Earnings')
+    tb1 = calculate_activity(tb, last)
 
 
 button = st.button("Generate Excel File")
